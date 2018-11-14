@@ -11,10 +11,15 @@ class Login extends React.Component {
   constructor (props) {
     super(props)
     this.navigateRegister = this.navigateRegister.bind(this)
+    this.navigateMain = this.navigateMain.bind(this)
   }
 
   navigateRegister () {
     this.props.navigation.navigate('Register')
+  }
+
+  navigateMain () {
+    this.props.navigation.navigate('Main')
   }
 
   render () {
@@ -31,7 +36,8 @@ class Login extends React.Component {
               <Input/>
             </Item>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}>
+              <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}
+                      onPress={() => this.navigateMain()}>
                 <Text>Login</Text>
               </Button>
             </View>
