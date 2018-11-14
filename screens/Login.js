@@ -4,6 +4,10 @@ import React from "react"
 import { withNavigation } from 'react-navigation';
 
 class Login extends React.Component {
+  static navigationOptions = {
+    header: null
+  };
+
   constructor (props) {
     super(props)
     this.navigateRegister = this.navigateRegister.bind(this)

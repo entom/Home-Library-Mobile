@@ -4,6 +4,10 @@ import Login from "./Login"
 import * as Expo from "expo";
 
 export default class Home extends React.Component {
+  static navigationOptions = {
+    header: null
+  };
+
   state = {
     isLoading: true,
     isLoggedIn: false
@@ -19,7 +23,6 @@ export default class Home extends React.Component {
       'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
     });
     this.setState({isLoading: false})
-    console.log(this.props)
   }
 
   render () {
