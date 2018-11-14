@@ -3,17 +3,17 @@ import {View} from "react-native"
 import React from "react"
 import { withNavigation } from 'react-navigation';
 
-class Login extends React.Component {
+class Register extends React.Component{
   constructor (props) {
     super(props)
-    this.navigateRegister = this.navigateRegister.bind(this)
+    this.navigateLogin = this.navigateLogin.bind(this)
   }
 
-  navigateRegister () {
-    this.props.navigation.navigate('Register')
+  navigateLogin() {
+    this.props.navigation.navigate('Login')
   }
 
-  render () {
+  render() {
     return (
       <Container style={{padding: 20}}>
         <Content>
@@ -28,14 +28,13 @@ class Login extends React.Component {
             </Item>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
               <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}>
-                <Text>Login</Text>
+                <Text>Register</Text>
               </Button>
             </View>
             <Text style={{textAlign: 'center', marginTop: 20, marginBottom: 5}}>or</Text>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}
-                      onPress={() => this.navigateRegister()}>
-                <Text>Register</Text>
+              <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}} onPress={() => this.navigateLogin()}>
+                <Text>Login</Text>
               </Button>
             </View>
           </Form>
@@ -45,4 +44,4 @@ class Login extends React.Component {
   }
 }
 
-export default withNavigation(Login)
+export default withNavigation(Register)
