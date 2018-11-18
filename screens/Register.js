@@ -31,13 +31,13 @@ class Register extends React.Component{
               <Input/>
             </Item>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}>
+              <Button rounded style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}}>
                 <Text>Register</Text>
               </Button>
             </View>
             <Text style={{textAlign: 'center', marginTop: 20, marginBottom: 5}}>or</Text>
             <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-              <Button style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}} onPress={() => this.navigateLogin()}>
+              <Button rounded style={{paddingLeft: 10, paddingRight: 10, marginTop: 20}} onPress={() => this.navigateLogin()}>
                 <Text>Login</Text>
               </Button>
             </View>
