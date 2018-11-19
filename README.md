@@ -1,12 +1,8 @@
-# Home-Library-Mobile
-React Native Mobile Application
+# home_library_mobile
 
-## Instructions
-* install all dependencies
-```
-npm install
-```
-* run project
-```
-expo start
-```
+A new Flutter project.
+
+## Getting Started
+
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).
