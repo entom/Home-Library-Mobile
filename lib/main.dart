@@ -48,9 +48,10 @@ class MainPage extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Item 2'),
+              title: Text('Add Book'),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => new Scaffold(body: AddBookPage())));
               },
             )
           ],
@@ -71,6 +72,79 @@ class MainPage extends StatelessWidget {
           }
       ),
     );
+  }
+}
+
+class AddBookPage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomPadding: false,
+      appBar: AppBar(
+        title: Text('Add Book')
+      ),
+      body: Stack(
+        children: <Widget>[
+          SingleChildScrollView(
+            padding: new EdgeInsets.fromLTRB(16, 16, 16, 16),
+            child: Container(
+              child: AddBookForm(),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class AddBookFormState extends State<AddBookForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: new InputDecoration(hintText: 'Book title'),
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+            },
+          ),
+          TextFormField(
+            decoration: new InputDecoration(hintText: 'Pages number'),
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter number of pages';
+              }
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: RaisedButton(
+              onPressed: () {
+                if (_formKey.currentState.validate()) {
+                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data...')));
+                }
+              },
+              child: Text('Submit'),
+            ),
+          )
+        ],
+      )
+    );
+  }
+}
+
+class AddBookForm extends StatefulWidget {
+
+  @override
+  State createState() {
+    return AddBookFormState();
   }
 }
 
